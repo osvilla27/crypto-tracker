@@ -1,2 +1,2 @@
 # crypto-tracker
-Challenge Cripto Tracker React Native - DevLabs.
+Challenge Crypto Tracker React Native - DevLabs.
