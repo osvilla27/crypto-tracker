@@ -1,6 +1,6 @@
 import { SafeAreaView, View, Text } from 'react-native'
 import React from 'react'
-import { Container, Title, ProfilePhoto } from './styled'
+import { Container, Title, ProfilePhoto } from './styles'
 
 const Header = () => {
   return (
