@@ -1,10 +1,5 @@
 import styled from 'styled-components/native'
 
-interface SubTitle {
-  color: string
-}
-
-
 
 export const Container = styled.View`
   padding: 20px 0px
@@ -33,16 +28,16 @@ export const Title = styled.Text`
   `
   }
 `
-export const SubTitle = styled.Text<SubTitle>`
+
+export const Percentage = styled.Text`
   font-size: 18px
-  color: gray
-  ${props => props.left&&`
-    text-align: right;
-  `}
+  color: green
+  text-align: right
   ${props => props.increased&&`
-    color: green;
+    color: red
   `}
-  ${props => props.decreased&&`
-    color: red;
-  `}
+`
+
+export const SubTitle = styled.Text`
+  font-size: 18px
 `

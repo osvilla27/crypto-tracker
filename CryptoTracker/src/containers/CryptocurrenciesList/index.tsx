@@ -1,25 +1,18 @@
-import { FlatList, ListRenderItem, View, Text } from 'react-native';
+import { FlatList, ListRenderItem, View, } from 'react-native';
 import React from 'react';
-import Crypto from '../../components/Crypto';
 import Header from '../../components/Header';
 import { FlatListStyles, AddCrypto } from './styles';
-import { SubTitle } from '../../components/Crypto/styles';
+import { SubTitle } from '../../components/Currency/styles';
+import Currency from '../../components/Currency';
+import { Cryptocurrency } from '../../interfaces/Cryptocurrency';
 
-
-interface Cryptocurrencies{
-  id: string,
-  name: string,
-  price: string,
-  percentage: string,
-  imageUrl: string,
-}
-
-const data: Cryptocurrencies[] = [
+const data: Cryptocurrency[] = [
   {
     id:'BCT',
     name: 'Bitcoin',
     price: '1,224.3',
     percentage: '1,45',
+    increased: false,
     imageUrl: require('../../assets/Bitcoin.png'),
   },
   {
@@ -27,6 +20,7 @@ const data: Cryptocurrencies[] = [
     name: 'Ethereum',
     price: '123,224.3',
     percentage: '1,45',
+    increased: true,
     imageUrl: require('../../assets/Ethereum.png'),
   },
   {
@@ -34,6 +28,7 @@ const data: Cryptocurrencies[] = [
     name: 'XRP',
     price: '1,224.3',
     percentage: '1,45',
+    increased: false,
     imageUrl: require('../../assets/XRP.png'),
   },
   {
@@ -41,6 +36,7 @@ const data: Cryptocurrencies[] = [
     name: 'Polkadot',
     price: '1,224.3',
     percentage: '1,45',
+    increased: true,
     imageUrl: require('../../assets/Polkadot.png'),
   },
   {
@@ -48,14 +44,15 @@ const data: Cryptocurrencies[] = [
     name: 'Litecoin',
     price: '1,224.3',
     percentage: '1,45',
+    increased: false,
     imageUrl: require('../../assets/Litecoin.png'),
   },
 ] 
 
-const ListCryptoScreen = () => {
+const CryptocurrenciesList = () => {
   
-  const renderItem : ListRenderItem<Cryptocurrencies> = ({ item }: { item: Cryptocurrencies }) => (
-   <Crypto item={item} />
+  const renderItem : ListRenderItem<Cryptocurrency> = ({item}: {item:Cryptocurrency}) => (
+   <Currency item={item} />
   )
   return (
     <View>
@@ -63,7 +60,7 @@ const ListCryptoScreen = () => {
       <FlatListStyles>
         <FlatList
           data={data}
-          keyExtractor={(item:Cryptocurrencies) => item.id}
+          keyExtractor={(item:Cryptocurrency) => item.id}
           showsVerticalScrollIndicator={false}
           renderItem={renderItem}
         />
@@ -76,4 +73,4 @@ const ListCryptoScreen = () => {
   )
 }
 
-export default ListCryptoScreen;
+export default CryptocurrenciesList
