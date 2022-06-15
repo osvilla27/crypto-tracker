@@ -1,24 +1,29 @@
-import { View } from 'react-native'
-import React from 'react'
-import {Container, CryptoIcon, IconContainer, SubTitle, Title, Percentage} from './styles'
-import { Cryptocurrency } from '../../interfaces/Cryptocurrency'
+import {View} from 'react-native';
+import React from 'react';
+import {
+  Container,
+  CryptoIcon,
+  IconContainer,
+  SubTitle,
+  Title,
+  Percentage,
+} from './styles';
+import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
 
-const Currency = ({item}: {item:Cryptocurrency}) => {
-  return (
-    <Container>
-      <IconContainer>
-       <CryptoIcon source={item.imageUrl}/>
-       <View>
+const Currency = ({item}: {item: Cryptocurrency}) => (
+  <Container>
+    <IconContainer>
+      <CryptoIcon source={item.imageUrl} />
+      <View>
         <Title>{item.name}</Title>
         <SubTitle>{item.id}</SubTitle>
-       </View>
-      </IconContainer>
-      <View>
-        <Title left>${item.price}</Title>
-        <Percentage increased={item.increased}>{item.percentage}%</Percentage>
       </View>
-    </Container>
-  )
-}
+    </IconContainer>
+    <View>
+      <Title left>${item.price}</Title>
+      <Percentage increased={item.increased}>{item.percentage}%</Percentage>
+    </View>
+  </Container>
+);
 
-export default Currency
+export default Currency;

@@ -3,9 +3,6 @@ module.exports = {
   extends: '@react-native-community',
   'prettier/prettier': [
     'error',
-    {
-      'endOfLine': 'auto',
-    }
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],

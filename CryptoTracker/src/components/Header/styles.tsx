@@ -9,11 +9,13 @@ export const Container = styled.View`
   padding-top: ${Platform.OS === 'ios' ? '50px' : '20px'}
   background-color: #385775
 `;
+
 export const Title = styled.Text`
   color: white
   font-size: 22px
   font-weight: bold
 `;
+
 export const ProfilePhoto = styled.Image`
   height: 50px
   width: 50px
