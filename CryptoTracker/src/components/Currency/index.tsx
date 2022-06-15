@@ -20,7 +20,7 @@ const Currency = ({item}: {item: Cryptocurrency}) => (
       </View>
     </IconContainer>
     <View>
-      <Title left>${item.price}</Title>
+      <Title>${item.price}</Title>
       <Percentage increased={item.increased}>{item.percentage}%</Percentage>
     </View>
   </Container>

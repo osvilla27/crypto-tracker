@@ -6,5 +6,5 @@ export const AddCrypto = styled.TouchableOpacity`
 `;
 
 export const FlatListStyles = styled.View`
-  margin: 20px;
+  margin: 20px
 `;

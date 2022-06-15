@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {Platform} from 'react-native';
+import theme from '../../library/utils/theme';
 
 export const Container = styled.View`
   flex-direction: row
@@ -7,13 +8,7 @@ export const Container = styled.View`
   align-items: center
   padding: 20px
   padding-top: ${Platform.OS === 'ios' ? '50px' : '20px'}
-  background-color: #385775
-`;
-
-export const Title = styled.Text`
-  color: white
-  font-size: 22px
-  font-weight: bold
+  background-color: ${theme.colors.primary}
 `;
 
 export const ProfilePhoto = styled.Image`
@@ -21,3 +16,10 @@ export const ProfilePhoto = styled.Image`
   width: 50px
   border-radius: 25px
 `;
+
+export const Title = styled.Text`
+  color: ${theme.colors.withe}
+  font-size: ${theme.fontSizes.large}
+  font-weight: bold
+`;
+
