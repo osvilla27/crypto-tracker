@@ -22,4 +22,3 @@ export const Title = styled.Text`
   font-size: ${theme.fontSizes.large}
   font-weight: bold
 `;
-

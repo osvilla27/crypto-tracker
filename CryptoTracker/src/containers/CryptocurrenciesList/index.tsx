@@ -2,9 +2,10 @@ import {FlatList, ListRenderItem, View} from 'react-native';
 import React from 'react';
 import Header from '../../components/Header';
 import {FlatListStyles, AddCrypto} from './styles';
-import {SubTitle} from '../../components/Currency/styles';
 import Currency from '../../components/Currency';
 import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import {SubTitle} from '../../library/utils/globalStyles';
 
 const data: Cryptocurrency[] = [
   {
@@ -49,7 +50,9 @@ const data: Cryptocurrency[] = [
   },
 ];
 
-const CryptocurrenciesList = () => {
+interface Props extends NativeStackScreenProps<any, any>{}
+
+const CryptocurrenciesList = ({navigation}: Props) => {
   const renderItem: ListRenderItem<Cryptocurrency> = ({
     item,
   }: {
@@ -67,7 +70,9 @@ const CryptocurrenciesList = () => {
           renderItem={renderItem}
         />
       </FlatListStyles>
-      <AddCrypto>
+      <AddCrypto
+        onPress={() => navigation.navigate('AddCrypto')}
+      >
         <SubTitle>+ Add a Cryptocurrency</SubTitle>
       </AddCrypto>
     </View>

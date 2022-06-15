@@ -4,23 +4,23 @@ import {
   Container,
   CryptoIcon,
   IconContainer,
-  SubTitle,
-  Title,
+  TextName,
   Percentage,
 } from './styles';
 import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
+import {SubTitle} from '../../library/utils/globalStyles';
 
 const Currency = ({item}: {item: Cryptocurrency}) => (
   <Container>
     <IconContainer>
       <CryptoIcon source={item.imageUrl} />
       <View>
-        <Title>{item.name}</Title>
+        <TextName>{item.name}</TextName>
         <SubTitle>{item.id}</SubTitle>
       </View>
     </IconContainer>
     <View>
-      <Title>${item.price}</Title>
+      <TextName>${item.price}</TextName>
       <Percentage increased={item.increased}>{item.percentage}%</Percentage>
     </View>
   </Container>

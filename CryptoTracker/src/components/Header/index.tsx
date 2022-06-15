@@ -1,9 +1,10 @@
 import React from 'react';
-import {Container, Title, ProfilePhoto} from './styles';
+import {Title} from '../../library/utils/globalStyles';
+import {Container, ProfilePhoto} from './styles';
 
 const Header = () => (
   <Container>
-    <Title>CryptoTracker Pro</Title>
+    <Title withe>CryptoTracker Pro</Title>
     <ProfilePhoto source={require('../../assets/photo.jpg')} />
   </Container>
 );
