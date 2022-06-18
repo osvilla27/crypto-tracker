@@ -22,7 +22,7 @@ export const AddContainer = styled.View`
 
 export const AddText = styled.Text<ButtonProps>`
   color: ${props =>
-    props.disabled ? theme.colors.withe : theme.colors.primary}
+    props.disabled ? theme.colors.white : theme.colors.primary}
   font-size: ${theme.fontSizes.medium}
   font-weight: bold
 `;

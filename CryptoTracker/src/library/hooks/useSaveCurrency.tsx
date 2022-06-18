@@ -30,7 +30,10 @@ const useSaveCurrency = () => {
     setCryptocurrencyStorage(currencyList);
   };
 
-  return {hanledSeveCurrency, hanledRemoveCurrency};
+  return {
+    hanledSeveCurrency,
+    hanledRemoveCurrency,
+  };
 };
 
 export default useSaveCurrency;

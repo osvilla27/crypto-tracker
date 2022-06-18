@@ -4,7 +4,7 @@ import {Container, ProfilePhoto} from './styles';
 
 const Header = () => (
   <Container>
-    <Title withe>CryptoTracker Pro</Title>
+    <Title white>CryptoTracker Pro</Title>
     <ProfilePhoto source={require('../../assets/photo.jpg')} />
   </Container>
 );

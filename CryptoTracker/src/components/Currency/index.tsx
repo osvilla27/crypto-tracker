@@ -17,8 +17,8 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
 
   const Modal = async () => {
     Alert.alert(
-      '¿Deseas eliminar este gasto?',
-      'Un gasto eliminado no se puede recuperar',
+      `Do you want to delete "${item.symbol}"?`,
+      'A deleted coin cannot be recovered',
       [
         {text: 'No', style: 'cancel'},
         {

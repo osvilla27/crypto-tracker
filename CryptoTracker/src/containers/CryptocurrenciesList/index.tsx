@@ -1,5 +1,5 @@
 import {FlatList, ListRenderItem, View} from 'react-native';
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import Header from '../../components/Header';
 import {FlatListStyles, AddCrypto} from './styles';
 import Currency from '../../components/Currency';

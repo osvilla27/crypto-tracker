@@ -7,13 +7,16 @@ const useCurrencies = () => {
     currencyState: {cryptocurrencies},
     cryptocurrenciesList,
   } = useContext(CurrencyContext);
+
+  const getCryptocurrencies = async () => {
+    const result = await getCryptocurrencStorage();
+    cryptocurrenciesList(result);
+  };
+
   useEffect(() => {
-    const get = async () => {
-      const result = await getCryptocurrencStorage();
-      cryptocurrenciesList(result);
-    };
-    get();
+    getCryptocurrencies();
   }, [cryptocurrencies]);
+
   return {
     cryptocurrencies,
   };

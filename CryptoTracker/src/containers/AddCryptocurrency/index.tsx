@@ -10,10 +10,15 @@ interface Props extends NativeStackScreenProps<any, any> {}
 
 const AddCryptocurrency = ({navigation}: Props) => {
   const {hanledSeveCurrency} = useSaveCurrency();
-  const {currencyState} = useContext(CurrencyContext);
+  const {
+    currencyState: {cryptocurrency},
+    isValid,
+    setIsValid,
+  } = useContext(CurrencyContext);
 
   const handleCryptocurrency = () => {
-    hanledSeveCurrency(currencyState.cryptocurrency);
+    hanledSeveCurrency(cryptocurrency);
+    setIsValid(false);
     navigation.navigate('ListCrypto');
   };
 
@@ -22,11 +27,11 @@ const AddCryptocurrency = ({navigation}: Props) => {
       <GoBack onPress={() => navigation.goBack()}>
         <SubTitle>{'<'} Back to list</SubTitle>
       </GoBack>
-      <Title withe={false}>Add a Cryptocurrency</Title>
+      <Title white={false}>Add a Cryptocurrency</Title>
       <SearchCurrency />
       <AddContainer>
-        <AddButton disabled={false} onPress={handleCryptocurrency}>
-          <AddText disabled={false}>Add</AddText>
+        <AddButton disabled={!isValid} onPress={handleCryptocurrency}>
+          <AddText disabled={!isValid}>Add</AddText>
         </AddButton>
       </AddContainer>
     </Container>

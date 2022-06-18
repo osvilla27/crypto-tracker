@@ -6,12 +6,15 @@ interface InputProps {
 }
 
 export const Container = styled.TouchableOpacity`
-  border-bottom-width: 0.5px;
-  width: 50%;
+  padding: 2px
+  margin: 2px
+  background-color: ${theme.colors.white}
+  border-radius: 5px
 `;
 
 export const FlatListStyles = styled.View`
-  height: 40px;
+  max-height: 100px
+  margin: 3px 0px
 `;
 
 export const MyInput = styled.TextInput<InputProps>`
@@ -22,4 +25,5 @@ export const MyInput = styled.TextInput<InputProps>`
   margin-top: 20px
   font-size: ${theme.fontSizes.medium}
   padding: 10px 
+  color: ${theme.colors.gray}
 `;
