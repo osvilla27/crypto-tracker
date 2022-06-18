@@ -1,5 +1,5 @@
-import {View} from 'react-native';
-import React from 'react';
+import {Alert, View} from 'react-native';
+import React, {useState} from 'react';
 import {
   Container,
   CryptoIcon,
@@ -9,21 +9,44 @@ import {
 } from './styles';
 import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
 import {SubTitle} from '../../library/utils/globalStyles';
+import useSaveCurrency from '../../library/hooks/useSaveCurrency';
 
-const Currency = ({item}: {item: Cryptocurrency}) => (
-  <Container>
-    <IconContainer>
-      <CryptoIcon source={item.imageUrl} />
+const Currency = ({item}: {item: Cryptocurrency}) => {
+  const [modal, setModal] = useState(true);
+  const {hanledRemoveCurrency} = useSaveCurrency();
+
+  const Modal = async () => {
+    Alert.alert(
+      '¿Deseas eliminar este gasto?',
+      'Un gasto eliminado no se puede recuperar',
+      [
+        {text: 'No', style: 'cancel'},
+        {
+          text: 'Delete',
+          onPress: () => {
+            hanledRemoveCurrency(item.id);
+            setModal(!modal);
+          },
+        },
+      ],
+    );
+  };
+
+  return (
+    <Container>
+      <IconContainer onPress={() => Modal()}>
+        <CryptoIcon source={require('../../assets/Bitcoin.png')} />
+        <View>
+          <TextName>{item.name}</TextName>
+          <SubTitle>{item.id}</SubTitle>
+        </View>
+      </IconContainer>
       <View>
-        <TextName>{item.name}</TextName>
-        <SubTitle>{item.id}</SubTitle>
+        <TextName>${item.price}</TextName>
+        <Percentage increased={item.increased}>{item.percentage}%</Percentage>
       </View>
-    </IconContainer>
-    <View>
-      <TextName>${item.price}</TextName>
-      <Percentage increased={item.increased}>{item.percentage}%</Percentage>
-    </View>
-  </Container>
-);
+    </Container>
+  );
+};
 
 export default Currency;

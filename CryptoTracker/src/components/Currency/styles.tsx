@@ -24,7 +24,7 @@ export const CryptoIcon = styled.Image<SourceProps>`
   margin-right: 10px
 `;
 
-export const IconContainer = styled.View`
+export const IconContainer = styled.TouchableOpacity`
   flex-direction: row;
 `;
 

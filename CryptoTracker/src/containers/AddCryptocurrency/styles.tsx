@@ -2,10 +2,6 @@ import styled from 'styled-components/native';
 import {Platform} from 'react-native';
 import theme from '../../library/utils/theme';
 
-interface InputProps {
-  isActive: boolean;
-}
-
 interface ButtonProps {
   disabled: boolean;
 }
@@ -40,14 +36,4 @@ export const Container = styled.View`
 export const GoBack = styled.TouchableOpacity`
   position: absolute
   top: ${Platform.OS === 'ios' ? '40px' : '10px'}
-`;
-
-export const MyInput = styled.TextInput<InputProps>`
-  border-width: ${props => (props.isActive ? '2px' : '1px')}
-  border-radius: 5px
-  border-color: ${props =>
-    props.isActive ? theme.colors.secondary : theme.colors.gray}
-  margin-top: 20px
-  font-size: ${theme.fontSizes.medium}
-  padding: 10px 
 `;

@@ -1,19 +1,21 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import {SubTitle, Title} from '../../library/utils/globalStyles';
-import {
-  AddButton,
-  AddText,
-  AddContainer,
-  Container,
-  GoBack,
-  MyInput,
-} from './styles';
+import {AddButton, AddText, AddContainer, Container, GoBack} from './styles';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import SearchCurrency from '../../components/SearchCurrency';
+import useSaveCurrency from '../../library/hooks/useSaveCurrency';
+import CurrencyContext from '../../store/context/CurrencyContext';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
 const AddCryptocurrency = ({navigation}: Props) => {
-  const [coin, setCoin] = useState('');
+  const {hanledSeveCurrency} = useSaveCurrency();
+  const {currencyState} = useContext(CurrencyContext);
+
+  const handleCryptocurrency = () => {
+    hanledSeveCurrency(currencyState.cryptocurrency);
+    navigation.navigate('ListCrypto');
+  };
 
   return (
     <Container>
@@ -21,15 +23,10 @@ const AddCryptocurrency = ({navigation}: Props) => {
         <SubTitle>{'<'} Back to list</SubTitle>
       </GoBack>
       <Title withe={false}>Add a Cryptocurrency</Title>
-      <MyInput
-        isActive={coin ? true : false}
-        placeholder={'Use a name or ticker symbol...'}
-        onChangeText={value => setCoin(value)}
-        value={coin}
-      />
+      <SearchCurrency />
       <AddContainer>
-        <AddButton disabled={!coin ? true : false}>
-          <AddText disabled={!coin ? true : false}>Add</AddText>
+        <AddButton disabled={false} onPress={handleCryptocurrency}>
+          <AddText disabled={false}>Add</AddText>
         </AddButton>
       </AddContainer>
     </Container>
