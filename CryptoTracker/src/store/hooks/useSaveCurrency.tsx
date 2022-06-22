@@ -1,4 +1,4 @@
-import {ToastAndroid} from 'react-native';
+import { ToastAndroid, Platform, Alert} from 'react-native';
 import { useAppDispatch, useAppSelector } from '.';
 import { currenciesList } from '../slices/currency';
 import {setCryptocurrencyStorage} from '../storage';
@@ -14,13 +14,13 @@ const useSaveCurrency = () => {
     );
 
     if (result.length !== 0) {
-      ToastAndroid.show('The currency is already added', ToastAndroid.LONG);
+      notification('The currency is already added')
     } else {
       const result = currencies;
       const resultString = JSON.stringify([...result, currency]);
       setCryptocurrencyStorage(resultString);
       dispatch(currenciesList([...currencies, currency]))
-      ToastAndroid.show('Saved Cryptocurrency', ToastAndroid.SHORT);
+      notification('Saved Cryptocurrency')
     }
   };
 
@@ -32,6 +32,13 @@ const useSaveCurrency = () => {
     setCryptocurrencyStorage(currencyList);
   };
 
+  const notification = (message:string) => {
+    if (Platform.OS === 'android') {
+      ToastAndroid.show(message, ToastAndroid.LONG);
+    } else {
+      Alert.alert(message);
+    }
+  }
   return {
     seveCurrency,
     removeCurrency,
