@@ -1,6 +1,6 @@
 import { ToastAndroid, Platform, Alert} from 'react-native';
 import { useAppDispatch, useAppSelector } from '.';
-import { currenciesList } from '../slices/currency';
+import { currenciesList, isValid } from '../slices/currency';
 import {setCryptocurrencyStorage} from '../storage';
 
 const useSaveCurrency = () => {
@@ -21,6 +21,7 @@ const useSaveCurrency = () => {
       setCryptocurrencyStorage(resultString);
       dispatch(currenciesList([...currencies, currency]))
       notification('Saved Cryptocurrency')
+      dispatch(isValid(false))
     }
   };
 

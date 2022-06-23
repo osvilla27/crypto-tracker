@@ -15,7 +15,7 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
   const [modal, setModal] = useState(true);
   const {removeCurrency} = useSaveCurrency();
 
-  const Modal = async () => {
+  const Modal = () => {
     Alert.alert(
       `Do you want to delete "${item.symbol}"?`,
       'A deleted coin cannot be recovered',
@@ -35,7 +35,7 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
   return (
     <Container>
       <IconContainer onPress={() => Modal()}>
-        <CryptoIcon source={require('../../assets/Bitcoin.png')} />
+        <CryptoIcon source={item.imageUrl} />
         <View>
           <TextName>{item.name}</TextName>
           <SubTitle>{item.id}</SubTitle>

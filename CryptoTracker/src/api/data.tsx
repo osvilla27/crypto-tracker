@@ -1,4 +1,4 @@
-import { Cryptocurrency } from "../interfaces/cryptocurrency";
+import { Cryptocurrency } from "../interfaces/Cryptocurrency";
 
 export const data: Cryptocurrency[] = [
     {
@@ -8,7 +8,7 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: false,
-      imageUrl: '../../assets/Bitcoin.png',
+      imageUrl: require('../assets/Bitcoin.png'),
     },
     {
       id: 'ETH',
@@ -17,7 +17,7 @@ export const data: Cryptocurrency[] = [
       price: '123,224.3',
       percentage: '1,45',
       increased: true,
-      imageUrl: '../../assets/Ethereum.png',
+      imageUrl: require('../assets/Ethereum.png'),
     },
     {
       id: 'XRP',
@@ -26,7 +26,7 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: false,
-      imageUrl: '../../assets/XRP.png',
+      imageUrl: require('../assets/XRP.png'),
     },
     {
       id: 'DOP',
@@ -35,7 +35,7 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: true,
-      imageUrl: '../../assets/Polkadot.png',
+      imageUrl: require('../assets/Polkadot.png'),
     },
     {
       id: 'LTC',
@@ -44,7 +44,7 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: false,
-      imageUrl: '../../assets/Litecoin.png',
+      imageUrl: require('../assets/Litecoin.png'),
     },
     {
       id: 'DDD',
@@ -53,7 +53,7 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: true,
-      imageUrl: '../../assets/Polkadot.png',
+      imageUrl: require('../assets/Polkadot.png'),
     },
     {
       id: 'LLL',
@@ -62,7 +62,7 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: false,
-      imageUrl: '../../assets/Litecoin.png',
+      imageUrl: require('../assets/Litecoin.png'),
     },
     {
       id: 'BBB',
@@ -71,29 +71,8 @@ export const data: Cryptocurrency[] = [
       price: '1,224.3',
       percentage: '1,45',
       increased: true,
-      imageUrl: '../../assets/Polkadot.png',
+      imageUrl: require('../assets/Polkadot.png'),
     },
   ];
-  
 
-  export const data2: Cryptocurrency[] = [
-    {
-      id: 'XXX',
-      symbol: 'XXX',
-      name: 'BitcoinXXX',
-      price: '1,224.3',
-      percentage: '1,45',
-      increased: false,
-      imageUrl: '../../assets/Bitcoin.png',
-    },
-    {
-      id: 'YYY',
-      symbol: 'YYY',
-      name: 'EthereumYYY',
-      price: '123,224.3',
-      percentage: '1,45',
-      increased: true,
-      imageUrl: '../../assets/Ethereum.png',
-    }
-  ];
   
