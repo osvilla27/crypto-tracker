@@ -1,5 +1,6 @@
 import {Alert, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   Container,
   CryptoIcon,
@@ -10,6 +11,7 @@ import {
 import {Cryptocurrency} from '../../interfaces/cryptocurrency';
 import {SubTitle} from '../../utils/globalStyles';
 import {useCurrency} from '../../store/hooks/useCurrency';
+import theme from '../../utils/theme';
 
 const Currency = ({item}: {item: Cryptocurrency}) => {
   const [change24Hour, setChange24Hour] = useState(false);
@@ -57,6 +59,11 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
       <View>
         <TextName>${String(item.price.toFixed(2))}</TextName>
         <Percentage increased={change24Hour}>
+          {change24Hour ? (
+            <Icon name="north-east" size={16} color={theme.colors.green} />
+          ) : (
+            <Icon name="south-west" size={16} color={theme.colors.red} />
+          )}
           {String(item.percentage.toFixed(2))}%
         </Percentage>
       </View>
