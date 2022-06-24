@@ -29,7 +29,7 @@ const SearchCurrency = () => {
   }: {
     item: Cryptocurrency;
   }) => (
-    <Container onPress={() => handleSelect({item})}>
+    <Container onPress={handleSelect.bind(null, {item})}>
       <SubTitle>
         {item.name} ({item.symbol})
       </SubTitle>
@@ -40,8 +40,8 @@ const SearchCurrency = () => {
     <>
       <MyInput
         isActive={searchQuery ? true : false}
-        placeholder={'Use a name or ticker symbol...'}
-        onChangeText={value => setSearchQuery(value)}
+        placeholder="Use a name or ticker symbol..."
+        onChangeText={setSearchQuery}
         placeholderTextColor={theme.colors.gray}
         value={searchQuery}
       />

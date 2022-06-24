@@ -31,7 +31,7 @@ const AddCryptocurrency = ({navigation}: Props) => {
       <Title white={false}>Add a Cryptocurrency</Title>
       <SearchCurrency />
       <AddContainer>
-        <AddButton disabled={!disabled} onPress={() => handleCryptocurrency()}>
+        <AddButton disabled={!disabled} onPress={handleCryptocurrency}>
           <AddText disabled={!disabled}>Add</AddText>
         </AddButton>
       </AddContainer>

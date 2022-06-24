@@ -14,7 +14,7 @@ import {useCurrency} from '../../store/hooks/useCurrency';
 const Currency = ({item}: {item: Cryptocurrency}) => {
   const [modal, setModal] = useState(true);
   const {removeCurrency} = useCurrency();
-  const Modal = () => {
+  const showAlert = () => {
     Alert.alert(
       `Do you want to delete "${item.symbol}"?`,
       'A deleted coin cannot be recovered',
@@ -33,7 +33,7 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
 
   return (
     <Container>
-      <IconContainer onPress={() => Modal()}>
+      <IconContainer onPress={showAlert}>
         <CryptoIcon source={item.imageUrl} />
         <View>
           <TextName>{item.name}</TextName>
