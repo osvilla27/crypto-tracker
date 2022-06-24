@@ -1,12 +1,12 @@
 import styled from 'styled-components/native';
-import theme from '../../library/utils/theme';
+import theme from '../../utils/theme';
 
 interface PercentageProps {
   increased: boolean;
 }
 
 interface SourceProps {
-  source: string
+  source: string;
 }
 
 export const Container = styled.View`
@@ -24,11 +24,11 @@ export const CryptoIcon = styled.Image<SourceProps>`
   margin-right: 10px
 `;
 
-export const IconContainer = styled.View`
+export const IconContainer = styled.TouchableOpacity`
   flex-direction: row;
 `;
 
-export const Title = styled.Text`
+export const TextName = styled.Text`
   font-weight: bold
   color: ${theme.colors.dark}
   font-size: ${theme.fontSizes.medium}
@@ -38,9 +38,4 @@ export const Percentage = styled.Text<PercentageProps>`
   font-size:  ${theme.fontSizes.small}
   text-align: right
   color: ${props => (props.increased ? theme.colors.green : theme.colors.red)};
-`;
-
-export const SubTitle = styled.Text`
-  font-size: ${theme.fontSizes.small};
-  color: ${theme.colors.primary}
 `;

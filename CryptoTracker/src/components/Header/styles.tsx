@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import {Platform} from 'react-native';
-import theme from '../../library/utils/theme';
+import theme from '../../utils/theme';
 
 export const Container = styled.View`
   flex-direction: row
@@ -18,7 +18,7 @@ export const ProfilePhoto = styled.Image`
 `;
 
 export const Title = styled.Text`
-  color: ${theme.colors.withe}
+  color: ${theme.colors.white}
   font-size: ${theme.fontSizes.large}
   font-weight: bold
 `;
