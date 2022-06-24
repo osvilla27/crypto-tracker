@@ -9,7 +9,7 @@ import {currenciesDB} from '../api/jsonCryptocurrencies';
 import {getCryptocurrencStorage} from '../storage';
 import {Dispatch} from 'react';
 import {Cryptocurrency} from '../../interfaces/cryptocurrency';
-import {CurrencyDb} from '../../interfaces/currencyDBt';
+import {CurrencyDb} from '../../interfaces/currencyDB';
 
 export const fetchCurrencies =
   () => async (dispatch: Dispatch<CurrencyAction>) => {
