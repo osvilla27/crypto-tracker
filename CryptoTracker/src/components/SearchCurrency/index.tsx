@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
 import {SubTitle} from '../../utils/globalStyles';
 import {Container, FlatListStyles, MyInput} from './styles';
-import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
+import {Cryptocurrency} from '../../interfaces/cryptocurrency';
 import theme from '../../utils/theme';
 import {useSearchCurrency} from '../../store/hooks/useSearchCurrency';
 import {useDispatch} from 'react-redux';

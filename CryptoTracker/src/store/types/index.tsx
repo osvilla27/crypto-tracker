@@ -1,9 +1,9 @@
-import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
+import {Cryptocurrency} from '../../interfaces/cryptocurrency';
 
 export const CURRENCIES = 'CURRENCIES';
 export const FETCH_CURRENCIES = 'FETCH_CURRENCIES';
 export const SELECT_CURRENCY = 'SELECT_CURRENCY';
-export const IS_VALID = 'IS_VALID'
+export const IS_VALID = 'IS_VALID';
 
 interface CurrenciesAction {
   type: typeof CURRENCIES;

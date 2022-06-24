@@ -5,7 +5,7 @@ import {FlatListStyles, AddCrypto} from './styles';
 import Currency from '../../components/Currency';
 import {SubTitle} from '../../utils/globalStyles';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
+import {Cryptocurrency} from '../../interfaces/cryptocurrency';
 import {useDispatch, useSelector} from 'react-redux';
 import actions from '../../store/actions';
 import {bindActionCreators} from 'redux';

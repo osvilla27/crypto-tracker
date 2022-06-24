@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {RootState} from '../';
-import {cryptocurrencyInitialState} from '../../interfaces/Cryptocurrency';
+import {cryptocurrencyInitialState} from '../../interfaces/cryptocurrency';
 import actions from '../actions';
 import {setCryptocurrencyStorage} from '../storage';
 
@@ -15,7 +15,7 @@ export const useCurrency = () => {
     (state: RootState) => state.currencies?.cryptocurrency,
   );
   const dispatch = useDispatch();
-  const {isValid, selectCurrency} = bindActionCreators(actions, dispatch);
+  const {selectCurrency} = bindActionCreators(actions, dispatch);
 
   const saveCurrency = () => {
     const result = currencies.filter(
@@ -29,7 +29,6 @@ export const useCurrency = () => {
       const resultString = JSON.stringify([...result, currency]);
       setCryptocurrencyStorage(resultString);
       notification('Saved Cryptocurrency');
-      isValid(false);
       selectCurrency(cryptocurrencyInitialState);
     }
   };
@@ -38,8 +37,6 @@ export const useCurrency = () => {
     const result = currencies.filter(currency => currency.id !== id);
     const currencyList = JSON.stringify(result);
     setCryptocurrencyStorage(currencyList);
-    isValid(false);
-    selectCurrency(cryptocurrencyInitialState);
   };
 
   const notification = (message: string) => {
