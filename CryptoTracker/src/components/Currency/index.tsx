@@ -1,5 +1,6 @@
 import {Alert, View} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   Container,
   CryptoIcon,
@@ -7,13 +8,20 @@ import {
   TextName,
   Percentage,
 } from './styles';
-import {Cryptocurrency} from '../../interfaces/Cryptocurrency';
+import {Cryptocurrency} from '../../interfaces/cryptocurrency';
 import {SubTitle} from '../../utils/globalStyles';
 import {useCurrency} from '../../store/hooks/useCurrency';
+import theme from '../../utils/theme';
 
 const Currency = ({item}: {item: Cryptocurrency}) => {
+  const [change24Hour, setChange24Hour] = useState(false);
   const [modal, setModal] = useState(true);
   const {removeCurrency} = useCurrency();
+
+  useEffect(() => {
+    setChange24Hour(item.percentage > 0);
+  }, [item.percentage]);
+
   const showAlert = () => {
     Alert.alert(
       `Do you want to delete "${item.symbol}"?`,
@@ -34,15 +42,22 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
   return (
     <Container>
       <IconContainer onPress={showAlert}>
-        <CryptoIcon source={item.imageUrl} />
+        <CryptoIcon source={{uri: item.imageUrl}} />
         <View>
           <TextName>{item.name}</TextName>
-          <SubTitle>{item.id}</SubTitle>
+          <SubTitle>{item.symbol}</SubTitle>
         </View>
       </IconContainer>
       <View>
-        <TextName>${item.price}</TextName>
-        <Percentage increased={item.increased}>{item.percentage}%</Percentage>
+        <TextName>${item.price.toFixed(2)}</TextName>
+        <Percentage increased={change24Hour}>
+          {change24Hour ? (
+            <Icon name="north-east" size={16} color={theme.colors.green} />
+          ) : (
+            <Icon name="south-west" size={16} color={theme.colors.red} />
+          )}
+          {item.percentage.toFixed(2)}%
+        </Percentage>
       </View>
     </Container>
   );

@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Cryptocurrency } from '../../interfaces/Cryptocurrency';
+import {Cryptocurrency} from '../../interfaces/cryptocurrency';
 
 export const getCryptocurrencStorage = async () => {
   try {
@@ -13,6 +13,14 @@ export const getCryptocurrencStorage = async () => {
 export const setCryptocurrencyStorage = async (cryptocurrency: string) => {
   try {
     await AsyncStorage.setItem('cryptocurrencies', cryptocurrency);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const removeCryptocurrencyStorage = async () => {
+  try {
+    await AsyncStorage.removeItem('cryptocurrencies');
   } catch (error) {
     console.log(error);
   }

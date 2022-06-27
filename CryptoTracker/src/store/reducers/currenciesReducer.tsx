@@ -1,4 +1,4 @@
-import {currencyInitialState} from '../../interfaces/Cryptocurrency';
+import {currencyInitialState} from '../../interfaces/cryptocurrency';
 import {
   CURRENCIES,
   CurrencyAction,

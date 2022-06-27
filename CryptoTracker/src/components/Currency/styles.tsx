@@ -5,10 +5,6 @@ interface PercentageProps {
   increased: boolean;
 }
 
-interface SourceProps {
-  source: string;
-}
-
 export const Container = styled.View`
   padding: 20px 0px
   flex-direction: row
@@ -17,7 +13,7 @@ export const Container = styled.View`
   border-color: ${theme.colors.gray}
 `;
 
-export const CryptoIcon = styled.Image<SourceProps>`
+export const CryptoIcon = styled.Image`
   height: 50px
   width: 50px
   border-radius: 25px
@@ -32,6 +28,7 @@ export const TextName = styled.Text`
   font-weight: bold
   color: ${theme.colors.dark}
   font-size: ${theme.fontSizes.medium}
+  text-align: right
 `;
 
 export const Percentage = styled.Text<PercentageProps>`
