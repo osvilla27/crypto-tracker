@@ -18,16 +18,12 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
   const [modal, setModal] = useState(true);
   const {removeCurrency} = useCurrency();
 
-  const change = (percentage: number) => {
-    if (percentage < 0) {
+  useEffect(() => {
+    if (item.percentage < 0) {
       setChange24Hour(false);
     } else {
       setChange24Hour(true);
     }
-  };
-
-  useEffect(() => {
-    change(item.percentage);
   }, [item.percentage]);
 
   const showAlert = () => {
@@ -57,14 +53,14 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
         </View>
       </IconContainer>
       <View>
-        <TextName>${String(item.price.toFixed(2))}</TextName>
+        <TextName>${item.price.toFixed(2)}</TextName>
         <Percentage increased={change24Hour}>
           {change24Hour ? (
             <Icon name="north-east" size={16} color={theme.colors.green} />
           ) : (
             <Icon name="south-west" size={16} color={theme.colors.red} />
           )}
-          {String(item.percentage.toFixed(2))}%
+          {item.percentage.toFixed(2)}%
         </Percentage>
       </View>
     </Container>
