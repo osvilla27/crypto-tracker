@@ -19,9 +19,7 @@ const Currency = ({item}: {item: Cryptocurrency}) => {
   const {removeCurrency} = useCurrency();
 
   useEffect(() => {
-    if (item.percentage < 0) {
-      setChange24Hour(false);
-    } else {
+    if (item.percentage >= 0) {
       setChange24Hour(true);
     }
   }, [item.percentage]);
