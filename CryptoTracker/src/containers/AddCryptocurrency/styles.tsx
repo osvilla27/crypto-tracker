@@ -33,6 +33,12 @@ export const Container = styled.View`
   justify-content: center
 `;
 
+export const ContainerNotificatios = styled.View`
+  position: absolute
+  top: ${Platform.OS === 'ios' ? '100px' : '70px'}
+  width: 100%
+`
+
 export const GoBack = styled.TouchableOpacity`
   position: absolute
   top: ${Platform.OS === 'ios' ? '60px' : '30px'}

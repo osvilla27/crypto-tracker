@@ -1,12 +1,13 @@
-import { Platform } from "react-native";
 import styled from "styled-components/native";
 import theme from "../../utils/theme";
 
 export const Container = styled.View`
-  position: absolute
-  top: ${Platform.OS === 'ios' ? '130px' : '100px'}
-  width: 90%
- 
+  flex-direction: row
+  justify-content: center 
+  margin: 10px
+  padding:10px
+  border-radius: 5px
+  background-color: ${theme.colors.white}
 `
 export const Notification = styled.Text`
   text-align: center
