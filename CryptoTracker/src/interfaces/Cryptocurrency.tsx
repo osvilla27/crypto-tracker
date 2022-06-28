@@ -4,7 +4,6 @@ export interface Cryptocurrency {
   name: string;
   price: number;
   percentage: number;
-  increased: boolean;
   imageUrl: string;
 }
 
@@ -14,7 +13,6 @@ export const cryptocurrencyInitialState: Cryptocurrency = {
   name: '',
   price: 0,
   percentage: 0,
-  increased: false,
   imageUrl: '',
 };
 
