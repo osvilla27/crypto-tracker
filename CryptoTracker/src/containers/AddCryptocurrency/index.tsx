@@ -8,6 +8,7 @@ import {bindActionCreators} from 'redux';
 import actions from '../../store/actions';
 import {RootState} from '../../store';
 import {useCurrency} from '../../store/hooks/useCurrency';
+import Notifications from '../../components/Notifications';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
@@ -28,6 +29,7 @@ const AddCryptocurrency = ({navigation}: Props) => {
       <GoBack onPress={() => navigation.goBack()}>
         <SubTitle>{'<'} Back to list</SubTitle>
       </GoBack>
+      <Notifications />
       <Title white={false}>Add a Cryptocurrency</Title>
       <SearchCurrency />
       <AddContainer>

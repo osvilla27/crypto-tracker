@@ -4,10 +4,6 @@ export interface Price {
     percentage: number,
   }
 
-export interface PriceDb {
-    USD: Usd;
-}
-
 export interface Usd {
     CHANGE24HOUR:            number;
     CHANGEDAY:               number;

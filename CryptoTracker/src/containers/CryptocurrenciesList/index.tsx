@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import actions from '../../store/actions';
 import {bindActionCreators} from 'redux';
 import {RootState} from '../../store';
+import Notifications from '../../components/Notifications';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
@@ -33,6 +34,7 @@ const CryptocurrenciesList = ({navigation}: Props) => {
   return (
     <View>
       <Header />
+      <Notifications />
       <FlatListStyles>
         {currencies?.length === 0 ? (
           <SubTitle>The wishlist is empty!</SubTitle>

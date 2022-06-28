@@ -19,6 +19,11 @@ export const fetchCurrencies =
       .then((resp: any) => {
         const response = transformData(resp.data);
         return dispatch({type: FETCH_CURRENCIES, payload: response});
+      })
+      .catch(error => {
+        if (error.message !== 'Network Error') {
+          console.log(error.message);
+        }
       });
   };
 
@@ -36,6 +41,12 @@ export const currenciesStorage =
           Object.values(resp.data.RAW),
         );
         return dispatch({type: CURRENCIES, payload: currenciesUpdate});
+      })
+      .catch((error) => {
+        if (error.message !== 'Network Error') {
+          console.log(error.message);
+        }
+        dispatch({type: CURRENCIES, payload: response});
       });
   };
 
