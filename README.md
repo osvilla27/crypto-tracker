@@ -50,3 +50,12 @@ $ npx pod-install ios
 $ npm run ios
 ```
 
+# Video Demo
+
+https://user-images.githubusercontent.com/69400297/176551363-04c57560-e39e-4d8f-8859-30c399f5c324.mp4
+
+
+
+https://user-images.githubusercontent.com/69400297/176551685-dcf01623-08b7-45e9-bd8a-42502829a971.mp4
+
+
