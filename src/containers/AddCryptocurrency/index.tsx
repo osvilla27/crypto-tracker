@@ -1,6 +1,13 @@
 import React from 'react';
 import {SubTitle, Title} from '../../utils/globalStyles';
-import {AddButton, AddText, AddContainer, Container, GoBack} from './styles';
+import {
+  AddButton,
+  AddText,
+  AddContainer,
+  Container,
+  GoBack,
+  NotifactionsContainer,
+} from './styles';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import SearchCurrency from '../../components/SearchCurrency';
 import {useDispatch, useSelector} from 'react-redux';
@@ -8,6 +15,7 @@ import {bindActionCreators} from 'redux';
 import actions from '../../store/actions';
 import {RootState} from '../../store';
 import {useCurrency} from '../../store/hooks/useCurrency';
+import Notifications from '../../components/Notifications';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
@@ -28,6 +36,9 @@ const AddCryptocurrency = ({navigation}: Props) => {
       <GoBack onPress={() => navigation.goBack()}>
         <SubTitle>{'<'} Back to list</SubTitle>
       </GoBack>
+      <NotifactionsContainer>
+        <Notifications />
+      </NotifactionsContainer>
       <Title white={false}>Add a Cryptocurrency</Title>
       <SearchCurrency />
       <AddContainer>

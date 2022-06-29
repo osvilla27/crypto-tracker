@@ -28,12 +28,18 @@ export const AddText = styled.Text<ButtonProps>`
 `;
 
 export const Container = styled.View`
-  margin: 20px
+  margin: 0px 20px
   flex: 1
   justify-content: center
 `;
 
+export const NotifactionsContainer = styled.View`
+  position: absolute
+  top: ${Platform.OS === 'ios' ? '100px' : '70px'}
+  width: 100%
+`
+
 export const GoBack = styled.TouchableOpacity`
   position: absolute
-  top: ${Platform.OS === 'ios' ? '40px' : '10px'}
+  top: ${Platform.OS === 'ios' ? '60px' : '30px'}
 `;
