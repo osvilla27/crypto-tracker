@@ -33,7 +33,7 @@ export const Container = styled.View`
   justify-content: center
 `;
 
-export const ContainerNotifications = styled.View`
+export const NotifactionsContainer = styled.View`
   position: absolute
   top: ${Platform.OS === 'ios' ? '100px' : '70px'}
   width: 100%
